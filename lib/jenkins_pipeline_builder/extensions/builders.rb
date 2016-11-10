@@ -332,8 +332,8 @@ builder do
 
   xml do |params|
     send('jenkins.plugins.nodejs.NodeJsCommandInterpreter', 'plugin' => 'nodejs@0.2.1') do
-      command params[:script]
-      nodeJSInstallationName params[:nodeJS_installation_name]
+      command params[:script] || ''
+      nodeJSInstallationName params[:nodeJS_installation_name] || ''
     end
   end
 end
